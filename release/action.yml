@@ -7,6 +7,10 @@ on:
         required: false
         type: boolean
         default: false
+      tag:
+        required: false
+        type: string
+        default: "latest"
       build:
         required: false
         type: string
@@ -38,5 +42,5 @@ jobs:
         if: ${{ inputs.build && inputs.publish }}
 
       - name: Publish to NPM
-        run: pnpm -r publish --access public --no-git-checks
+        run: pnpm -r publish --access public --no-git-checks --tag ${{ inputs.tag }}
         if: ${{ inputs.publish }}
