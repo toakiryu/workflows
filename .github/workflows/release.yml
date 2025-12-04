@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: Setup JS
-        uses: ./workflows/setup-js.yml
+        uses: toakiryu/workflows/setup-js@v1
         with:
           fetch-all: true
 
